@@ -1,28 +1,51 @@
 :root {
-
+    --shadow-color: 0px 20px 20px -15px rgb(0,0,0,0.3);
+    --max-content-width: 1024px;
 }
 
 html {
     font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
     background-color: lightgray;
+    padding: 0px;
 }
 
-header {}
+body {
+    margin: 0;
+}
+header {
+    display: grid;
+    grid-template-columns: auto auto;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+}
+
+header p {
+    text-align: right;
+}
 
 #main{
-
+    width: auto;
+    border-top: 5px solid red;
+    margin: 0px;
+    padding: 40px;
 }
 
 #title {
-
+    font-size: 10vw;
+    line-height: 0.8em;
+    text-align: right;
+    margin-bottom: 18px;
 }
 
 #img-div {
-
+    
 }
 
 #image {
-
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
 }
 
 #img-caption {
@@ -30,28 +53,43 @@ header {}
 }
 
 #tribute-info {
+    width: 100%;
+    padding: 0%;
+}
 
+#tribute-description {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 #tribute-info ul {
     list-style: none;
+    padding: 0px;
+    margin: 0 auto; 
+    max-width: var(--max-content-width);
 }
 
 #tribute-info li {
-    padding: 20px;
+    padding: 1em 1em 1em 5.5em;
     margin-bottom: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 20px 20px -15px rgb(0,0,0,.30);
+    box-shadow: var(--shadow-color);
+    /*font-size: 1em;
+    line-height: 1.5em;*/
 }
 
 .year {
     color: white;
     display: inline-block;
-    padding: 2px 8px;
+    padding: 0px 8px;
     margin-right: 10px;
+    margin-left: -3.8em;
     background-color: red;
     border-radius: 5px;
+    text-align: center;
 }
 
 #tribute-link {
