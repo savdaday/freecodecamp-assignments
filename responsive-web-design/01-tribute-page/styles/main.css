@@ -1,11 +1,13 @@
 :root {
     --shadow-small: 0px 20px 20px -15px rgb(0,0,0,0.3);
     --shadow-big: 0px 40px 40px -15px rgb(0,0,0,0.3);
-    
-    --gutter: 40px;
+    /*font-size: calc(64.5% + 1vw);*/
+    font-size: 100%;
+    --gutter: clamp(20px, 10px + 2vw, 40px);
     --max-header-width: 960px;
     --max-content-width: calc((var(--max-header-width) + var(--gutter)));
     --max-image-width: calc((var(--max-header-width)/2));
+    --redtendo: #e4000f;
 }
 
 html {
@@ -40,8 +42,8 @@ header {
 }
 
 #title {
-    font-size: 10vw;
-    line-height: 0.8em;
+    font-size: clamp(3.5rem, 0.125rem + 10vw, 7rem);
+    line-height: 0.85em;
     text-align: right;
     margin-bottom: 18px;
     margin-top: 0px;
@@ -64,7 +66,7 @@ header::before {
     background-color: white;
     grid-area: 1/1/4/5;
     border: none;
-    border-bottom: red solid 5px;
+    border-bottom: var(--redtendo) solid 5px;
     margin: 0px;
 }
 
@@ -82,7 +84,8 @@ header::before {
 #description {
     grid-area: 4/2/5/3;
     align-self: start;
-    font-size: 2vw;
+    font-size: clamp(1rem, 0.1rem + 1vw, 1.5rem);
+    line-height: 1.4em;
     text-align: right;
     margin: 0px;
 }
@@ -125,7 +128,8 @@ header::before {
 }
 
 #tribute-info li {
-    position: relative;
+    /*position: relative;
+    display:block;*/
     /*padding: 1em 1em 1em 5.5em;*/
     padding: 16px 16px 16px 86px;
     margin-bottom: 20px;
@@ -142,12 +146,12 @@ header::before {
 
 .year {
     color: #fff;
-    display: block;
-    position: absolute;
+    display: inline-block;
+    float: left;
     padding: 0 8px;
     margin-right: 10px;
     margin-left: -70px;
-    background-color: red;
+    background-color: var(--redtendo);
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
@@ -202,7 +206,6 @@ header::before {
         font-size: 0.85em;
     }
     #title {
-        font-size: 5em;
         text-align: center;
     }
     #lifetime {
@@ -210,7 +213,7 @@ header::before {
     }
 
     #description {
-        font-size: 1.2em;
+        /*font-size: 1.2em;*/
         justify-self: start;
         text-align: justify;
         grid-area: 4/2/5/3;
@@ -218,7 +221,8 @@ header::before {
   }
 
   @media screen and (min-width: 1280px) {
-   #title {
+   /*
+    #title {
        font-size: 8em;
-   }
+   }*/
 }
