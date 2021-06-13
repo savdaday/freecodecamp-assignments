@@ -84,6 +84,7 @@ header::before {
 }
 
 #image {
+    display: block;
     width: 100%;
     max-width: var(--max-image-width);
     height: auto;
@@ -147,6 +148,7 @@ header::before {
     max-width: var(--max-header-width);
     margin: 0 auto;
     padding: var(--gutter);
+    text-align: center;
 }
 
 #tribute-link {
