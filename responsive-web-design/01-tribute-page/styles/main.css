@@ -52,7 +52,6 @@ header::before {
 #title-wrapper {
     grid-area: 2/2/3/3;
     align-self: end;
-    border: 1px solid red;
 }
 
 #title {
@@ -86,6 +85,7 @@ header::before {
 
 #image {
     width: 100%;
+    max-width: var(--max-image-width);
     height: auto;
     box-shadow: 0px 40px 40px -15px rgb(0,0,0,0.3);
     border-radius: 15px;
