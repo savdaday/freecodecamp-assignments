@@ -15,6 +15,90 @@
 
 <body>
 
+    <header>
+        <h1 id="title">The 2021 Player Survey</h1>
+        <p id="description">This is for the players, we're totally not taking your data for advertising to help
+            boost our bottom line and satiate our investors.</p>
+    </header>
+
+    <main id="form-wrapper">
+        <form id="survey-form" action="">
+
+            <div class="input-group">
+                <label id="name-label" for="name">
+                    <p>Name</p>
+                    <input id="name" name="name" type="text" placeholder="Enter your name" required>
+                </label>
+
+                <label id="email-label" for="email">
+                    <p>Email</p>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" required>
+                </label>
+
+                <label id="number-label" for="games">
+                    <p>How many games do you own? (Optional)</p>
+                    <input id="number" name="games" type="number" min="1" max="1000" placeholder="Number of games">
+                </label>
+            </div>
+
+            <!--change to radio buttons-->
+            <div class="input-group">
+                <p>What is your favourite way to play</p>
+                <label><input name="playtype" value="a little of everything" type="radio" checked> A little of
+                    everything</label>
+                <label><input name="playtype" value="online multiplayer" type="radio"> Online Multiplayer</label>
+                <label><input name="playtype" value="split screen" type="radio"> Split Screen</label>
+                <label><input name="playtype" value="single player" type="radio"> Single Player</label>
+                <label><input name="playtype" value="co-op" type="radio"> Co-Op</label>
+            </div>
+
+            <!--select-->
+            <div class="input-group">
+                <p>Which is your prefered gaming platform?</p>
+                <select id="dropdown" name="dropdown" required>
+                    <option value="" disabled selected hidden>Choose your platform</option>
+                    <option id="ps4" value="playstation 4">Playstation 4</option>
+                    <option id="ps4pro" value="playstation 4 pro">Playstation 4 Proy</option>
+                    <option id="ps5" value="playstation 5">Playstation 5</option>
+                    <option id="switch" value="nintendo switch">Nintendo Switch</option>
+                    <option id="xos" value="xbox one s">Xbox One S</option>
+                    <option id="xox" value="xbox one x">Xbox One X</option>
+                    <option id="xss" value="xbox series s">Xbox Series S</option>
+                    <option id="xsx" value="xbox series x">Xbox Series X</option>
+                    <option id="pc" value="PC">PC</option>
+                    <option id="ios" value="iOs">iOS Device</option>
+                    <option id="android" value="android">Android Device</option>
+                </select>
+            </div>
+
+            <!--check boxes-->
+            <div class="input-group">
+                <p>What types of games do you play? <br>
+                    <span class="small-text">Select all that apply.</span>
+                </p>
+                <label><input value="action adventure" type="checkbox"> Action Adventure</label>
+                <label><input value="arcade" type="checkbox"> Arcade</label>
+                <label><input value="battle royale" type="checkbox"> Battle Royale</label>
+                <label><input value="fighter" type="checkbox"> Fighter</label>
+                <label><input value="first person shooter" type="checkbox"> First Person Shooter</label>
+                <label><input value="moba" type="checkbox" type="checkbox"> Moba</label>
+                <label><input value="platformer" type="checkbox"> Platformer</label>
+                <label><input value="puzzle" type="checkbox"> Puzzle</label>
+                <label><input value="role playing game" type="checkbox"> Role Playing Game</label>
+                <label><input value="strategy" type="checkbox"> Strategy</label>
+                <label><input value="third person shooter" type="checkbox"> Third Person Shooter</label>
+                <label><input value="twin stick shooter" type="checkbox"> Twin Stick Shooter</label>
+            </div>
+            <div class="input-group">
+                <label id="comments-label" for="comments">
+                    <p>Anything else you want to tell us?</p><textarea id="comments" name="comments"
+                        placeholder="Enter your comments here" rows="4"></textarea>
+                </label>
+                <button id="submit" name="submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+
 </body>
 
 </html>

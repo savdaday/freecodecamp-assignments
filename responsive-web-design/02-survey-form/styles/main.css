@@ -1,0 +1,147 @@
+:root{
+    --max-content-width: 640px;
+    --space-xs: 10px;
+    --space-s: 20px;
+    --space-m: 40px;
+    --space-l: 60px;
+    --radius-s: 5px;
+    --radius-m: 10px;
+    --radius-l: 20px;
+    --bg-color: #1C1F27;
+    --text-color: #243435;
+    --text-color-hover: #2e4a4d;
+    --form-color: rgba(217,243,235,0.7);
+    --form-color-hover: rgba(226, 245, 239, 0.2);
+    --gradient: linear-gradient(90deg, rgba(35,40,51,0.5) 0%, rgba(61,46,37,0.5) 100%);
+
+}
+*{ 
+    box-sizing:border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    /*background: linear-gradient(180deg, #fff 60px, #e9e9e9 60px);*/
+    background: var(--bg-color) url('../images/background.jpg') fixed center no-repeat;
+}
+
+body {
+    margin: 0;
+    color: var(--text-color);
+    
+}
+
+header {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: var(--space-l)  var(--space-l) 0 var(--space-l);
+}
+
+#title {
+    font-size: 2.5em;
+    text-align: center;
+    color: white;
+}
+
+#description {
+    line-height: 1.6em;
+    text-align: center;
+    color: white;
+}
+
+#form-wrapper {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: var(--space-l) 0 ;
+}
+
+#survey-form {
+    display: block;
+    background: var(--form-color) url('../images/form-background.jpg') fixed center no-repeat;
+    border-radius: var(--radius-m);
+}
+
+.input-group {
+    padding: var(--space-m);
+    border-bottom: 2px solid var(--bg-color);
+}
+
+.input-group:hover {
+    background-color: var(--form-color-hover);
+    color: var(--text-color-hover);
+}
+
+.input-group:first-child {
+    border-radius: var(--radius-m) var(--radius-m) 0 0;
+}
+
+.input-group:last-child {
+    border-radius: 0 0 var(--radius-m) var(--radius-m);
+    border: none;
+}
+
+.input-group p {
+    margin: 0 0 var(--space-xs) 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.small-text {
+    font-size: 0.65em;
+    font-weight: normal;
+}
+
+label {
+    display:block;
+    width: 100%;
+    margin-bottom: var(--space-xs);
+}
+
+.input-group label:last-child {
+    margin-bottom: 0;
+}
+
+#name-label, #email-label {
+    margin-bottom: var(--space-s);
+}
+
+select, #name, #email, #number, #comments {
+    display: block;
+    width: 100%;
+    padding: var(--space-xs);
+    border: 1px solid lightgray;
+    border-radius: var(--radius-s);
+}
+
+#comments {
+    
+}
+
+#submit {
+    width: 100%;
+    padding: var(--space-xs);
+    border: none;
+    border-radius: var(--radius-s);
+    color: #fff;
+    background-color: rgb(49, 141, 41);
+    margin-top: var(--space-s);
+}
+
+#submit:hover {
+    background-color: rgb(53, 167, 42);
+}
+
+@media screen and (max-width:560px) {
+
+    header {
+        padding: var(--space-m)  var(--space-s) 0 var(--space-s);
+    }
+
+    #survey-form {
+        margin: 0  var(--space-s);
+    }
+    
+    .input-group {
+        padding: var(--space-s);
+    }
+}
