@@ -15,12 +15,15 @@
     --gradient: linear-gradient(90deg, rgba(35,40,51,0.5) 0%, rgba(61,46,37,0.5) 100%);
 
 }
+
+/*
 *{ 
     box-sizing:border-box;
-}
+}*/
 
 html {
     font-family: 'Open Sans', sans-serif;
+    box-sizing:border-box;
     /*background: linear-gradient(180deg, #fff 60px, #e9e9e9 60px);*/
     background: var(--bg-color) url('https://user-images.githubusercontent.com/5158244/121846603-409b5280-ccb5-11eb-89ed-3859be4a6cda.jpg') fixed center no-repeat;
 }
@@ -111,6 +114,10 @@ select, #name, #email, #number, #comments {
     padding: var(--space-xs);
     border: 1px solid lightgray;
     border-radius: var(--radius-s);
+}
+
+input,select,textarea {
+    box-sizing:border-box;
 }
 
 #comments {
