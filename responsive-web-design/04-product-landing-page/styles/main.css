@@ -1,0 +1,51 @@
+:root {
+  /* Add color theme variables */
+  /* color pallete */
+
+  /* color scheme */
+  --color-primary: #000;
+  --color-secondary: #000;
+  --color-neutral: #000;
+  --color-accent: #000;
+  --color-error:red;
+  --color-success: green;
+}
+
+html {
+  box-sizing: border-box;
+}
+  *, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#header {
+
+}
+
+#header-img {
+
+}
+
+#nav-bar {
+
+}
+
+.nav-link {
+    
+}
+
+#form {
+
+}
+
+#email {
+
+}
+
+#submit {
+
+}
+
+#video {
+
+}
