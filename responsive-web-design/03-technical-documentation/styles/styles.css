@@ -1,0 +1,110 @@
+:root {
+    --nav-width: 280px;
+    --nav-padding: 16px 24px;
+    --main-width: calc(100% - var(--nav-width));
+    --max-main-width: calc(1280 - var(--nav-width));
+    --max-image-width: calc((var(--max-header-width)/2));
+    --main-padding: 24px 8px;
+    --text-color: #3c3c3c;
+    --code-bg-color: grey;
+    --hover-color: grey;
+    --hover-gradient: linear-gradient(90deg, #6c6c6c 0%, grey 100%);
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: grey;
+}
+
+#navbar {
+  width: var(--nav-width);
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: white;
+}
+
+#navbar header {
+  padding: var(--nav-padding);
+}
+
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#navbar li {
+  border-top: 2px solid grey;
+}
+
+#navbar a {
+  text-decoration: none;
+  display:block;
+  padding: var(--nav-padding);
+  color: grey;
+}
+#navbar a:hover {
+  text-decoration: none;
+  padding: var(--nav-padding);
+  color: white;
+  background-color: var(--hover-color);
+  background: var(--hover-gradient);
+}
+
+#main-doc {
+  margin-left: var(--nav-width);
+  width: var(--main-width);
+  max-width: var(--max-main-width);
+  padding: var(--main-padding);
+}
+
+section {
+  margin: 10px auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+p {
+  line-height: 1.5rem;
+  margin-bottom: 0;
+}
+
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+section li {
+  margin: 0.5rem 1rem;
+}
+
+code {
+  font-family: monospace;
+  font-size: 0.85rem;
+  line-height: 1.2rem;
+  display: block;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  background-color: #f2f2f2;
+  color: grey;
+}
