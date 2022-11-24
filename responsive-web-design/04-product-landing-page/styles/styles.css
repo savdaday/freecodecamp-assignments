@@ -1,42 +1,179 @@
 :root {
-  /* Add color theme variables */
+  /* Variables */
   /* color pallete */
 
   /* color scheme */
-  --color-primary: #000;
-  --color-secondary: #000;
-  --color-neutral: #000;
-  --color-accent: #000;
+  --color-primary: #7C00DD;
+  --color-secondary: #363636;
+  --color-neutral: #D8D8D8;
+  /*--color-neutral: #979797;*/
+  --color-accent: #B8B8B8;
   --color-error:red;
   --color-success: green;
-}
 
-*, *:before, *:after {
-box-sizing: inherit;
+  /* settings */
+  --max-page-width: 1280px;
+  --padding24: 2.4rem;
+  --padding32: 3.2rem;
+
+  --base-font-size: 1.8rem;
+
+  --hero-bg: linear-gradient(0deg, rgba(54,54,54,1) 0%, rgba(0,0,0,0) 100%),
+  linear-gradient(0deg, rgba(54,54,54,0.2) 0%, rgba(54,54,54,0.2) 100%),
+   url("../images/bg-dark.jpg");
+
+
+  font-size: 62.5%; /* 10px */
+
 }
 
 html {
   box-sizing: border-box;
 }
 
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
+  font-size: var(--base-font-size);
+  color: var(--color-secondary);
+  margin: 0;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 7.2rem;
+  line-height: 7.2rem;
+  color: var(--color-primary);
+}
+
+h3 {
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: var(--max-page-width);
+  margin: 0 auto;
+}
+
+/* HEADER & NAVIGATION ------------- */
 
 #header {
-
-}
-
-#header-img {
-
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 4px 24px -12px rgba(0, 0, 0, 0.50);
+  -webkit-box-shadow: 0px 4px 24px -12px rgba(0, 0, 0, 0.50);
 }
 
 #nav-bar {
+  padding: var(--padding24) var(--padding32);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+#header-img {
+  height: 32px;
+}
+
+#nav-bar ul {
+  list-style: none;
+  display: flex;
+  grid-column-gap: 32px;
+  padding: 0;
+  margin:0;
 }
 
 .nav-link {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
 
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* HERO BANNER ------------- */
+
+#hero {
+  background-color: var(--color-secondary);
+  background: var(--hero-bg);
+  background-size: cover;
+  display: flex;
+  padding: var(--padding32);
+}
+
+.title-wrapper {
+  display: flex;
+}
+
+.title h1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1.6rem;
+}
+
+.sub-title {
+  display: block;
+}
+
+.title-center {
+  font-size: 11.8rem;
+  line-height: 8.8rem;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.title-start, .title-end {
+  font-weight: normal;
+  color: white;
+}
+.title-start {
+  font-size: 5.2rem;
+  line-height: 5.2rem;
+}
+
+.title-end {
+  font-size: 3.6rem;
+  line-height: 3.6rem;
+}
+
+.sub-title {
+  text-align: center;
+  color: var(--color-neutral)
+}
+
+.bottles {
+  width:50%;
+  max-width: 655px;
+  display:flex;
+}
+
+.bottles img {
+  width: 100%;
+}
+
+.bottles img:first-child {
+  height: 64%;
+}
+
+.bottles img:nth-child(2) {
+  height: 81%;
+}
+
+.bottles img:last-child(2) {
+  height: 100%;
 }
 
 #form {
@@ -55,6 +192,4 @@ body {
 
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-}
+/* TYPOGRAPHY ----------- */
