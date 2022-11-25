@@ -9,6 +9,10 @@
   --color-error:red;
   --color-success: green;
 
+  /* SHADOWS */
+  --shadow-s: 0 var(--px4) var(--px32) calc(-1 * var(--px12)) rgba(0, 0, 0, 0.50);
+  --shadow-l: 0 var(--px52) var(--px52) calc(-1 * var(--px24)) rgba(0, 0, 0, 0.25);
+
   /* FLUID TYPOGRAPHY */
   --fontscale: 1.333;
   --base-fontsize: 2px;
@@ -30,19 +34,24 @@
   --fontsize-s-3: calc(var(--fontsize-s-2) / var(--fontscale));
 
   /* SPACING (converted to rems/ems) */
-  --base-px: 16;
-  --max-page-width: calc((1280 / var(--base-px)) * 1rem );
-  --px4: calc((4 / var(--base-px)) * 1rem );
-  --px8: calc((8 / var(--base-px)) * 1rem );
-  --px12: calc((12 / var(--base-px)) * 1rem );
-  --px16: calc((16 / var(--base-px)) * 1rem );
-  --px18: calc((18 / var(--base-px)) * 1rem );
-  --px24: calc((24 / var(--base-px)) * 1rem );
-  --px28: calc((28 / var(--base-px)) * 1rem );
-  --px32: calc((32 / var(--base-px)) * 1rem );
-  --px40: calc((40 / var(--base-px)) * 1rem );
-  --px44: calc((44 / var(--base-px)) * 1rem );
-  --px48: calc((48 / var(--base-px)) * 1rem );
+  --px: 16;
+  --r: var(--rem);
+  --max-page-width: calc((1280 / var(--px)) * var(--r) );
+  --px4: calc((4 / var(--px)) * var(--r) );
+  --px8: calc((8 / var(--px)) * var(--r) );
+  --px12: calc((12 / var(--px)) * var(--r) );
+  --px16: calc((16 / var(--px)) * var(--r) );
+  --px18: calc((18 / var(--px)) * var(--r) );
+  --px24: calc((24 / var(--px)) * var(--r) );
+  --px28: calc((28 / var(--px)) * var(--r) );
+  --px32: calc((32 / var(--px)) * var(--r) );
+  --px40: calc((40 / var(--px)) * var(--r) );
+  --px44: calc((44 / var(--px)) * var(--r) );
+  --px48: calc((48 / var(--px)) * var(--r) );
+  --px52: calc((52 / var(--px)) * var(--r) );
+  --px56: calc((56 / var(--px)) * var(--r) );
+  --px60: calc((60 / var(--px)) * var(--r) );
+  --px64: calc((64 / var(--px)) * var(--r) );
   --border-radius-s: var(--px8);
   --border-radius-l: var(--px16);
 
@@ -55,13 +64,9 @@
 
 }
 
-html {
-  box-sizing: border-box;
-}
+html { box-sizing: border-box; }
 
-*, *:before, *:after {
-box-sizing: inherit;
-}
+*, *:before, *:after { box-sizing: inherit; }
 
 body {
   font-family: 'Poppins', sans-serif;
@@ -90,7 +95,7 @@ h2::after {
   content: "";
   flex: 1;
   width: auto;
-  height: 0.125em;
+  height: var(--px8);
   background-color: red;
   background: var(--h2dot) round;
 }
@@ -125,7 +130,10 @@ h3 {
 #header {
   width: 100%;
   background-color: white;
-  box-shadow: 0px 4px 24px -12px rgba(0, 0, 0, 0.50);
+  box-shadow: var(--shadow-s);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 #nav-bar {
@@ -137,20 +145,20 @@ h3 {
 }
 
 #header-img {
-  height: 24px;
+  height: var(--px32);
 }
 
 #nav-bar ul {
   list-style: none;
   display: flex;
-  grid-column-gap: 32px;
+  grid-column-gap: var(--px32);
   padding: 0;
   margin:0;
 }
 
 .nav-link {
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: var(--font-size-l-1);
   font-weight: bold;
   color: var(--color-secondary);
 }
@@ -227,7 +235,7 @@ h3 {
   margin: 0 auto;
   width: auto;
   max-width: 760px;
-  box-shadow: 0px 50px 50px -25px rgba(0,0,0,0.25);
+  box-shadow: var(--shadow-l);
 }
 
 #form label {
