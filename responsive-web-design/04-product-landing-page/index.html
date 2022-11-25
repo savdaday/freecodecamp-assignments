@@ -12,132 +12,153 @@
 </head>
 
 <body>
-    <header id="header">
-          <nav id="nav-bar" class="wrapper">
-            <img id="header-img" alt="logo" src="images/POTiON_logo.svg">
-            <ul>
-              <li><a class="nav-link" href="#Benefits">Benefits</a></li>
-              <li><a class="nav-link" href="#How-We-Brew">How We Brew</a></li>
-              <li><a class="nav-link" href="#Shop">Shop</a></li>
-            </ul>
-          </nav>
-    </header>
 
+    <header id="header">
+      <nav id="nav-bar" class="wrapper">
+        <img id="header-img" alt="logo" src="images/POTiON_logo.svg">
+        <ul>
+          <li><a class="nav-link" href="#benefits">Benefits</a></li>
+          <li><a class="nav-link" href="#how-we-brew">How We Brew</a></li>
+          <li><a class="nav-link" href="#shop">Shop</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <section id="hero">
       <div class="title-wrapper wrapper">
-        <div class="title">
-          <h1><span class="title-start">Authentic</span> <span class="title-center">Witch <br/>Brewed</span> <span class="title-end">pick-me-ups</span></h1>
+        <div class="">
+          <h1 class="title"><span class="title-start">Authentic</span> <span class="title-center">Witch <br/>Brewed</span> <span class="title-end">pick-me-ups</span></h1>
           <p class="sub-title">For the bold & adventurer</p>
         </div>
-        <div class="bottles">
-          <img src="images/potion_blue.png" alt="Blue Potion">
-          <img src="images/potion_green.png" alt="Green Potion">
-          <img src="images/potion_red.png" alt="Red Potion">
-        </div>
+        <img class="product-image" src="images/header-bottles.png" alt="Potion Bottles">
       </div>
     </section>
 
+    <div class="form-wrapper wrapper">
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <label for="email">Sign up to get news and special offers!</label>
+        <input id="email" name="email" type="email" placeholder="Enter your email" required>
+        <input id="submit" class="button" type="submit" value="Submit">
+      </form>
+    </div>
 
-    <section id="form-section">
-        <form id="form" action="https://www.freecodecamp.com/email-submit">
-            <label for="email">Email<input id="email" name="email" type="email" placeholder="Enter your email" required></label>
-            <input id="submit" type="submit" value="Submit">
-        </form>
-    </section>
+<!-- BENEFITS - START -->
+    <section id="benefits">
+      <div class="wrapper">
 
-    <section id="Benefits">
-      <h2>Benefits</h2>
-
-      <div class="benefit-card">
-        <img src="images/ingredients.png" alt="Ingredients">
-        <div class="benefit-info">
-          <h3>Fresh & Fantastical Flavours</h3>
-          <p>At POTiON, we only use fresh organic herbs and berries sustainably harvested from our enchanted forests. This gives our brews their amazing flavours and fantastical effects. We have 3 flavours - Vita Berry, Wild Berry, and Super Berry. Try them all.</p>
+        <h2>Benefits</h2>
+        <div class="benefit-card">
+          <img class="benefit-photo" src="images/ingredients.png" alt="Ingredients">
+          <div class="benefit-info">
+            <h3>Fresh & Fantastical Flavours</h3>
+            <p>At POTiON, we only use fresh organic herbs and berries sustainably harvested from our enchanted forests. This gives our brews their amazing flavours and fantastical effects. We have 3 flavours - Vita Berry, Wild Berry, and Super Berry. Try them all.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="benefit-card">
-        <img src="images/tome.png" alt="Spellbook and wand">
-        <div class="benefit-info">
-          <h3>Enchanted Energy</h3>
-          <p>POTiON is 100% enchanted. Just one drink can power you up through an entire gaming session. On your 100th battleroyale match for the night? No sweat, you’ve got enchanted energy running through your veins.</p>
+        <div class="benefit-card">
+          <img class="benefit-photo" src="images/tome.png" alt="Spellbook and wand">
+          <div class="benefit-info">
+            <h3>Enchanted Energy</h3>
+            <p>POTiON is 100% enchanted. Just one drink can power you up through an entire gaming session. On your 100th battleroyale match for the night? No sweat, you’ve got enchanted energy running through your veins.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="benefit-card">
-        <img src="images/cauldron.png" alt="Cauldron">
-        <div class="benefit-info">
-          <h3>Locally Brewed</h3>
-          <p>No outsourcing here, we only use local cauldrons. So you know when you buy POTiON you get the best brew money can buy and support local witches in the process. Now that’s an achievment!</p>
+        <div class="benefit-card">
+          <img src="images/cauldron.png" alt="Cauldron">
+          <div>
+            <h3>Locally Brewed</h3>
+            <p>No outsourcing here, we only use local cauldrons. So you know when you buy POTiON you get the best brew money can buy and support local witches in the process. Now that’s an achievment!</p>
+          </div>
         </div>
+
       </div>
-
     </section>
+<!-- BENEFITS - END -->
 
-    <section id="How-We-Brew">
-      <h2>How We Brew</h2>
-        <div id="video-wrapper" style="padding:56.25% 0 0 0;position:relative;"><iframe id="video" src="https://player.vimeo.com/video/50388729?h=e6d14396cb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Mother&amp;#039;s Patty Remix"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<!-- HOW WE BREW - START -->
+    <section id="how-we-brew">
+      <div class="wrapper">
+
+        <h2>How We Brew</h2>
+        <div id="video-wrapper" style="padding:56.25% 0 0 0;position:relative;">
+          <iframe id="video" src="https://player.vimeo.com/video/50388729?h=e6d14396cb&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Mother&amp;#039;s Patty Remix"></iframe>
+        </div><script src="https://player.vimeo.com/api/player.js"></script>
+
+      </div>
     </section>
+<!-- HOW WE BREW - END -->
 
 <!-- SHOP - START -->
-    <section id="Shop">
+    <section id="shop">
+      <div class="wrapper">
 
-      <h2>Shop</h2>
+        <h2>Shop</h2>
 
-      <div class="price-card">
-        <div class="item-wrapper">
-          <img src="images/potion_red.png" alt="Red Potion">
-          <p class="item-name">Vita-Berry</p>
-          <p class="item-price">42</p>
+      <div class="price-card-wrapper">
+          <div class="price-card">
+            <div class="item-wrapper">
+              <img class="item-photo" src="images/potion_red.png" alt="Red Potion">
+              <p class="item-name">Vita-Berry</p>
+              <p class="item-price">42</p>
+            </div>
+
+            <ul>
+              <li>Enhanced Vitality</li>
+              <li>Strawberry & Sorrel flavour</li>
+              <li>Lasts 12 Hours</li>
+              <li><button class="button">Buy Now</button></li>
+            </ul>
+             <!-- <a href="#" class="button">Buy</a> -->
+          </div>
+
+          <div class="price-card">
+            <div class="item-wrapper">
+              <img class="item-photo" src="images/potion_green.png" alt="Red Potion">
+              <p class="item-name">Wild-Berry</p>
+              <p class="item-price">64</p>
+            </div>
+            <ul>
+              <li>Enhanced Reflexes</li>
+              <li>Kiwi & Mint flavour</li>
+              <li>Lasts 16 Hours</li>
+              <li><button class="button">Buy Now</button></li>
+            </ul>
+             <!-- <a href="#" class="button">Buy</a> -->
+          </div>
+
+          <div class="price-card">
+
+            <div class="item-wrapper">
+              <img class="item-photo" src="images/potion_blue.png" alt="Red Potion">
+              <p class="item-name">Super-Berry</p>
+              <p class="item-price">96</p>
+            </div>
+
+            <ul class="effect-list">
+              <li>Enhanced Reflexes & Vitality</li>
+              <li>Blueberry & Lime flavour</li>
+              <li>Lasts 24 Hours</li>
+              <li><button class="button">Buy Now</button></li>
+            </ul>
+             <!-- <a href="#" class="button">Buy</a> -->
+          </div>
         </div>
-        <ul>
-          <li>Enhanced Vitality</li>
-          <li>Strawberry & Sorrel flavour</li>
-          <li>Lasts 12 Hours</li>
-        </ul>
-        <a href="#" class="buy-button">Buy</a>
-      </div>
 
-      <div class="price-card">
-        <div class="item-wrapper">
-          <img src="images/potion_green.png" alt="Red Potion">
-          <p class="item-name">Wild-Berry</p>
-          <p class="item-price">64</p>
-        </div>
-        <ul>
-          <li>Enhanced Reflexes</li>
-          <li>Kiwi & Mint flavour</li>
-          <li>Lasts 16 Hours</li>
-        </ul>
-        <a href="#" class="buy-button">Buy</a>
       </div>
-
-      <div class="price-card">
-        <div class="item-wrapper">
-          <img src="images/potion_blue.png" alt="Red Potion">
-          <p class="item-name">Super-Berry</p>
-          <p class="item-price">96</p>
-        </div>
-        <ul>
-          <li>Enhanced Reflexes & Vitality</li>
-          <li>Blueberry & Lime flavour</li>
-          <li>Lasts 24 Hours</li>
-        </ul>
-        <a href="#" class="buy-button">Buy</a>
-      </div>
-
     </section>
 <!-- SHOP - END -->
 
     <footer>
-        <ul class="">
-          <li>Privacy</li>
-          <li>Terms</li>
-          <li>Contact</li>
+
+        <ul class="wrapper">
+          <li>Copyright 2022, POTiON.</li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
-      <p>Copyright 2022, POTiON.</p>
+
     </footer>
+
 </body>
 
 </html>
