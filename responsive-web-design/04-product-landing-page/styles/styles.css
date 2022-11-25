@@ -1,8 +1,6 @@
 :root {
-  /* Variables */
-  /* color pallete */
 
-  /* color scheme */
+  /* COLOR SCHEME */
   --color-primary: #7C00DD;
   --color-secondary: #363636;
   --color-neutral: #B8B8B8;
@@ -11,18 +9,42 @@
   --color-error:red;
   --color-success: green;
 
-  /* settings */
-  --max-page-width: 1280px;
-  --space-025: 0.25em;
-  --space-050: 0.5em;
-  --space-075: 0.75em;
-  --space-100: 1em;
-  --space-150: 1.5em;
-  --space-200: 2em;
-  --space-250: 2.5em;
-  --space-300: 3em;
-  --base-font-size: clamp(1.4rem, 1.6vw , 1.6rem); /* 1.6rem */
-  --border-radius: 8px;
+  /* FLUID TYPOGRAPHY */
+  --fontscale: 1.333;
+  --base-fontsize: 2px;
+  --fluid-type-ratio: 0.9;
+
+  /* Add clamp font scaling formula so font doesn't get too large or too small */
+  --rem: clamp(0.625rem, calc(var(--base-fontsize) + var(--fluid-type-ratio) * 1vw), 1rem);
+
+  /* Don't change the lines below, you only need to change the --fontscale above. */
+  --fontsize-l-1: calc(var(--rem) * var(--fontscale));
+  --fontsize-l-2: calc(var(--fontsize-l-1) * var(--fontscale));
+  --fontsize-l-3: calc(var(--fontsize-l-2) * var(--fontscale));
+  --fontsize-l-4: calc(var(--fontsize-l-3) * var(--fontscale));
+  --fontsize-l-5: calc(var(--fontsize-l-4) * var(--fontscale));
+  --fontsize-l-6: calc(var(--fontsize-l-5) * var(--fontscale));
+  --fontsize-l-7: calc(var(--fontsize-l-6) * var(--fontscale));
+  --fontsize-s-1: calc(var(--rem) / var(--fontscale));
+  --fontsize-s-2: calc(var(--fontsize-s-1) / var(--fontscale));
+  --fontsize-s-3: calc(var(--fontsize-s-2) / var(--fontscale));
+
+  /* SPACING (converted to rems/ems) */
+  --base-px: 16;
+  --max-page-width: calc((1280 / var(--base-px)) * 1rem );
+  --px4: calc((4 / var(--base-px)) * 1rem );
+  --px8: calc((8 / var(--base-px)) * 1rem );
+  --px12: calc((12 / var(--base-px)) * 1rem );
+  --px16: calc((16 / var(--base-px)) * 1rem );
+  --px18: calc((18 / var(--base-px)) * 1rem );
+  --px24: calc((24 / var(--base-px)) * 1rem );
+  --px28: calc((28 / var(--base-px)) * 1rem );
+  --px32: calc((32 / var(--base-px)) * 1rem );
+  --px40: calc((40 / var(--base-px)) * 1rem );
+  --px44: calc((44 / var(--base-px)) * 1rem );
+  --px48: calc((48 / var(--base-px)) * 1rem );
+  --border-radius-s: var(--px8);
+  --border-radius-l: var(--px16);
 
   --dark-bg: linear-gradient(0deg, rgba(54,54,54,1) 0%, rgba(0,0,0,0) 100%),
   linear-gradient(0deg, rgba(54,54,54,0.2) 0%, rgba(54,54,54,0.2) 100%),
@@ -30,9 +52,6 @@
 
   --light-bg: url("../images/bg-light.jpg");
   --h2dot: url("../images/h2dot.svg");
-
-
-  font-size: 62.5%; /* 10px */
 
 }
 
@@ -46,7 +65,7 @@ box-sizing: inherit;
 
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: var(--base-font-size);
+  font-size: var(--fontsize-l-1);
   color: var(--color-secondary);
   margin: 0;
 }
@@ -59,26 +78,25 @@ h1, h2, h3, h4, h5, h6 {
 h2 {
   display: flex;
   align-items: baseline;
-  gap: var(--space-025);
-  font-size: 7.2rem;
-  margin: 0 0 var(--space-050);
+  gap: var(--px4);
+  margin: 0 0 var(--px8);
+  font-size: var(--fontsize-l-6);
   line-height: 1;
   color: var(--color-primary);
 }
 
 h2::after {
+  /* Dotted line after section headers */
   content: "";
   flex: 1;
   width: auto;
   height: 0.125em;
   background-color: red;
   background: var(--h2dot) round;
-  /*border-bottom: 16px solid;
-  border-image: var(--h2dot) 33% round;*/
 }
 
 h3 {
-  font-size: 4.8rem;
+  font-size: var(--fontsize-l-5);
   line-height: 1.2;
   margin: 0;
 }
@@ -91,6 +109,17 @@ h3 {
   padding: 2em;
 }
 
+.button {
+  font-size: var(--fontsize-l-1);
+  font-weight: bold;
+  color: white;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-s);
+  border:none;
+  padding: var(--px12) var(--px24);
+  text-decoration: none;
+}
+
 /* HEADER & NAVIGATION ------------- */
 
 #header {
@@ -101,7 +130,7 @@ h3 {
 
 #nav-bar {
   width: 100%;
-  padding: var(--space-150) var(--space-200);
+  padding: var(--px24) var(--px32);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -136,14 +165,14 @@ h3 {
   background-color: var(--color-secondary);
   background: var(--dark-bg);
   background-size: cover;
-  padding: var(--space-150) var(--space-200) 5em;
+  padding: var(--px24) var(--px32) 5em;
   margin-bottom: -4em;
 }
 
 .title-wrapper {
   display: flex;
   justify-content: center;
-  gap: var(--space-200);
+  gap: var(--px32);
   border: 1px solid red;
 }
 
@@ -155,8 +184,7 @@ h3 {
 }
 
 .title-center {
-  font-size: 11.8rem;
-  font-size: clamp(8.4rem, 10vw , 11.8rem);
+  font-size: var(--fontsize-l-7);
   line-height: 0.75;
   color: var(--color-primary);
 }
@@ -167,14 +195,12 @@ h3 {
 }
 
 .title-start {
-  font-size: 5.2rem;
-  font-size: clamp(3.7rem, 4.4vw , 5.2rem);
+  font-size: var(--fontsize-l-5);
   line-height: 1;
 }
 
 .title-end {
-  font-size: 3.6rem;
-  font-size: clamp(2.7rem, 3.2vw , 3.6rem);
+  font-size: var(--fontsize-l-4);
   line-height: 1;
 }
 
@@ -194,10 +220,10 @@ h3 {
 #form {
   display: flex;
   flex-flow: row wrap;
-  gap: var(--space-050);
+  gap: var(--px8);
   background-color: var(--color-neutral);
-  border-radius: var(--border-radius);
-  padding: var(--space-300);
+  border-radius: var(--border-radius-l);
+  padding: var(--px48);
   margin: 0 auto;
   width: auto;
   max-width: 760px;
@@ -206,12 +232,12 @@ h3 {
 
 #form label {
   flex: 100%;
-  font-size: 2.4rem;
+  font-size: var(--fontsize-l-2);
   font-weight: bold;
   line-height: 1;
   text-transform: uppercase;
   text-align: center;
-  margin-bottom: var(--space-100);
+  margin-bottom: var(--px16);
 }
 
 #form input[type="email"] {
@@ -229,8 +255,8 @@ h3 {
 }
 
 #email {
-  font-size: 1.8rem;
-  border-radius: var(--border-radius);
+  font-size: var(--fontsize-l-1);
+  border-radius: var(--border-radius-s);
   border: 2px solid var(--color-accent);
   padding: 1em 2em;
   width: 100%;
@@ -246,8 +272,8 @@ h3 {
   display:flex;
   align-items:center;
   margin: 0 auto;
-  padding: var(--space-100) 0;
-  gap: var(--space-200);
+  padding: var(--px16) 0;
+  gap: var(--px32);
   border-bottom: 2px solid grey;
 }
 
@@ -277,21 +303,21 @@ h3 {
 .price-card-wrapper {
   display: flex;
   flex-flow: row wrap;
-  gap: var(--space-200);
+  gap: var(--px32);
 
 }
 
 .price-card {
   flex: 1;
-  border-radius: var(--space-100);
+  border-radius: var(--border-radius-l);
 }
 
 .item-wrapper {
   background: var(--dark-bg);
   background-size: cover;
   margin: 0;
-  padding: var(--space-100);
-  border-radius: var(--space-100) var(--space-100) 0 0;
+  padding: var(--px16);
+  border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
   display: flex;
   flex-flow: column nowrap;
   margin-top: 40%;
@@ -303,19 +329,18 @@ h3 {
   object-fit: contain;
   width: 45%;
   height: auto;
-  margin: -40% 0 var(--space-100);
-
+  margin: -40% 0 var(--px16);
 }
 
 .item-name {
-  font: bold 3rem 'Playfair Display', serif;
+  font: bold var(--fontsize-l-3) 'Playfair Display', serif;
   line-height: 1;
   color: white;
   margin: 0;
 }
 
 .item-price {
-  font: bold 6rem 'Poppins', sans-serif;
+  font: bold var(--fontsize-l-6) 'Poppins', sans-serif;
   line-height: 1;
   color: white;
   margin: 0;
@@ -324,14 +349,14 @@ h3 {
 .item-price::before {
   content: "$";
   vertical-align: super;
-  font-size: 3rem;
+  font-size: var(--fontsize-l-4);
 }
 
 .price-card ul {
   list-style-type: none;
-  border-radius: 0 0 var(--space-100) var(--space-100);
+  border-radius: 0 0 var(--border-radius-l) var(--border-radius-l);
   background-color: var(--color-accent);
-  padding: var(--space-100);
+  padding: var(--px16);
   margin:0;
 }
 
@@ -339,23 +364,12 @@ h3 {
   display: block;
   text-align: center;
   margin: 0;
-  padding: var(--space-050);
+  padding: var(--px8);
   border-bottom: 1px solid grey;
 }
 
 .price-card li:nth-child(n+3) {
   border: none;
-}
-
-.button {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  background-color: var(--color-primary);
-  border-radius: var(--border-radius);
-  border:none;
-  padding: var(--space-075) var(--space-150);
-  text-decoration: none;
 }
 
 .price-card .button {
@@ -370,7 +384,7 @@ footer {
 
 footer ul {
   display: flex;
-  gap: var(--space-200);
+  gap: var(--px32);
   justify-content: flex-end;
   list-style: none;
   margin: 0;
@@ -398,7 +412,7 @@ footer a {
   }
 
   .price-card-wrapper {
-    gap: var(--space-300);
+    gap: var(--px48);
   }
 
   .price-card {
@@ -410,17 +424,17 @@ footer a {
   .item-wrapper {
     margin-top:0;
     flex: 1;
-    border-radius: var(--space-100) 0 0 var(--space-100);
+    border-radius: var(--border-radius-l) 0 0 var(--border-radius-l);
   }
 
   .price-card ul {
     flex:1;
-    border-radius: 0 var(--space-100) var(--space-100) 0;
+    border-radius: 0 var(--border-radius-l) var(--border-radius-l) 0;
   }
 
   .price-card img {
     width: 35%;
-    margin: -15% 0 var(--space-100);
+    margin: -15% 0 var(--border-radius-l);
   }
 
 }
