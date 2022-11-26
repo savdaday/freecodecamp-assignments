@@ -1,32 +1,41 @@
 :root {
 
-  /* THEME */
+  /* || THEME */
   --color-primary: #7C00DD;
   --color-secondary: #363636;
   --color-accent-neutral: #B8B8B8;
   --color-accent-light: #D8D8D8;
-  /*--color-accent-light: #979797;*/
   --color-primary-hover: #9A1AFF;
-  --color-success: green;
 
   --dark-bg:
-  linear-gradient(0deg, rgba(54,54,54,1) 0%, rgba(54,54,54,0) 100%),
-  linear-gradient(0deg, rgba(54,54,54,0.2) 0%, rgba(54,54,54,0.2) 100%),
+  linear-gradient(0deg, rgba(54, 54, 54,1) 0%, rgba(54, 54, 54,0) 100%),
+  linear-gradient(0deg, rgba(54, 54, 54,0.2) 0%, rgba(54, 54, 54,0.2) 100%),
    url("https://user-images.githubusercontent.com/5158244/204062424-76df2342-7467-4aba-bb30-039cf1234e16.jpg");
 
   --light-bg:
-  linear-gradient(0deg, rgba(216,216,216,1) 0%, rgba(216,216,216,0) 100%),
-  linear-gradient(0deg, rgba(216,216,216,0.2) 0%, rgba(216,216,216,0.2) 100%),
+  linear-gradient(0deg, rgba(216, 216, 216,1) 0%, rgba(216, 216, 216,0) 100%),
+  linear-gradient(0deg, rgba(216, 216, 216,0.5) 0%, rgba(216, 216, 216,0.5) 100%),
   url("https://user-images.githubusercontent.com/5158244/204062425-bd51801f-fb42-472b-9d2a-72fcec403ca2.jpg");
+
+  --neutral-bg:
+  linear-gradient(0deg, rgba(184, 184, 184,1) 0%, rgba(184, 184, 184,0) 100%),
+  linear-gradient(0deg, rgba(184, 184, 184,0.6) 0%, rgba(184, 184, 184,0.6) 100%),
+  url("https://user-images.githubusercontent.com/5158244/204062425-bd51801f-fb42-472b-9d2a-72fcec403ca2.jpg");
+
   --h2dot: url("https://user-images.githubusercontent.com/5158244/204062364-acd82220-a758-42a2-98b0-e3261f17f0a6.svg");
 
-  /* SHADOWS */
+  /* || SHADOWS */
   --shadow-s: 0 var(--px4) var(--px32) calc(-1 * var(--px12)) rgba(0, 0, 0, 0.50);
   --shadow-l: 0 var(--px52) var(--px52) calc(-1 * var(--px24)) rgba(0, 0, 0, 0.25);
 
-  /* FLUID TYPOGRAPHY */
+  /* || FLUID TYPOGRAPHY */
+  /*    Reference:
+        Ari Stathopoulos
+        https://aristath.github.io/blog/typography-scales-with-css-vars
+        https://aristath.github.io/blog/fluid-typography-css-vars
+  */
   --fontscale: 1.333;
-  --base-fontsize: 2px;
+  --base-fontsize: 1px;
   --fluid-type-ratio: 0.9;
 
   /* Add clamp font scaling formula so font doesn't get too large or too small */
@@ -45,33 +54,31 @@
   --fontsize-s-2: calc(var(--fontsize-s-1) / var(--fontscale));
   --fontsize-s-3: calc(var(--fontsize-s-2) / var(--fontscale));
 
-  /* SPACING (converted to rems/ems) */
-  --px: 16;
-  --r: var(--rem);
-  --max-page-width: calc((1280 / var(--px)) * var(--r) );
-  --px4: calc((4 / var(--px)) * var(--r) );
-  --px8: calc((8 / var(--px)) * var(--r) );
-  --px12: calc((12 / var(--px)) * var(--r) );
-  --px16: calc((16 / var(--px)) * var(--r) );
-  --px18: calc((18 / var(--px)) * var(--r) );
-  --px24: calc((24 / var(--px)) * var(--r) );
-  --px28: calc((28 / var(--px)) * var(--r) );
-  --px32: calc((32 / var(--px)) * var(--r) );
-  --px40: calc((40 / var(--px)) * var(--r) );
-  --px44: calc((44 / var(--px)) * var(--r) );
-  --px48: calc((48 / var(--px)) * var(--r) );
-  --px52: calc((52 / var(--px)) * var(--r) );
-  --px56: calc((56 / var(--px)) * var(--r) );
-  --px60: calc((60 / var(--px)) * var(--r) );
-  --px64: calc((64 / var(--px)) * var(--r) );
-  --px72: calc((72 / var(--px)) * var(--r) );
-  --px96: calc((96 / var(--px)) * var(--r) );
+  /* || SPACING (converted to rems/ems) */
+  --base-px: 16;
+  --max-page-width: calc((1280 / var(--base-px)) * var(--rem) );
+  --px4: calc((4 / var(--base-px)) * var(--rem) );
+  --px8: calc((8 / var(--base-px)) * var(--rem) );
+  --px12: calc((12 / var(--base-px)) * var(--rem) );
+  --px16: calc((16 / var(--base-px)) * var(--rem) );
+  --px18: calc((18 / var(--base-px)) * var(--rem) );
+  --px24: calc((24 / var(--base-px)) * var(--rem) );
+  --px28: calc((28 / var(--base-px)) * var(--rem) );
+  --px32: calc((32 / var(--base-px)) * var(--rem) );
+  --px40: calc((40 / var(--base-px)) * var(--rem) );
+  --px44: calc((44 / var(--base-px)) * var(--rem) );
+  --px48: calc((48 / var(--base-px)) * var(--rem) );
+  --px52: calc((52 / var(--base-px)) * var(--rem) );
+  --px56: calc((56 / var(--base-px)) * var(--rem) );
+  --px60: calc((60 / var(--base-px)) * var(--rem) );
+  --px64: calc((64 / var(--base-px)) * var(--rem) );
   --border-radius-s: var(--px8);
   --border-radius-l: var(--px16);
 }
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
   background: linear-gradient(0deg, #FFF 0%, #FFF 90%, var(--color-accent-neutral)90%, var(--color-accent-neutral) 100%);
 }
 
@@ -91,9 +98,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   display: flex;
+  flex-flow: row wrap;
   align-items: baseline;
   gap: var(--px4);
-  margin: 0 0 var(--px32);
+  margin-bottom: var(--px32);
   font-size: var(--fontsize-l-6);
   line-height: 1;
   color: var(--color-primary);
@@ -107,6 +115,7 @@ h2::after {
   height: var(--px8);
   background-color: red;
   background: var(--h2dot) round;
+  margin-top: var(--px16); /* needed if the dotted line wraps under on mobile */
 }
 
 h3 {
@@ -116,15 +125,15 @@ h3 {
 }
 
 section {
-  padding: var(--px64) 0;
+  padding: 0 0 calc(var(--px48) * 2);
   background-color: white;
 }
 
 .wrapper {
-  width: 80%;
+  width: 100%%;
   max-width: var(--max-page-width);
-  margin: 0 auto;
-  padding: var(--px64);
+  margin: 0% auto;
+  padding: var(--px48);
 }
 
 .button {
@@ -145,7 +154,7 @@ section {
   border-radius: var(--border-radius-s);
 }
 
-/* HEADER & NAVIGATION ------------- */
+/* || HEADER & NAVIGATION */
 
 #header {
   width: 100%;
@@ -189,7 +198,7 @@ section {
   color: var(--color-primary);
 }
 
-/* HERO BANNER ------------- */
+/* || HERO BANNER */
 
 #hero {
   background-color: var(--color-secondary);
@@ -244,12 +253,13 @@ section {
   max-width: 41rem /*656px*/;
 }
 
-/* SUBSCRIPTION FORM ------------- */
+/* || SUBSCRIPTION FORM */
 
 #form {
   display: flex;
   flex-flow: row wrap;
   gap: var(--px8);
+  background-color: var(--color-accent-light);
   background: var(--light-bg);
   background-size: cover;
   border-radius: var(--border-radius-l);
@@ -295,7 +305,7 @@ section {
   width: 100%;
 }
 
-/* BENEFITS ------------- */
+/* || BENEFITS */
 
 #benefits {
   /*border: 2px solid red;*/
@@ -308,7 +318,7 @@ section {
   margin: 0 auto;
   padding: var(--px16) 0;
   gap: var(--px32);
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid var(--color-accent-light);
 }
 
 .benefit-card:last-child {
@@ -325,45 +335,46 @@ section {
   height: auto;
 }
 
-/* HOW WE BREW ------------- */
+/* || HOW WE BREW */
 
 #how-we-brew {
+  background-color: var(--color-accent-light);
   background: var(--light-bg);
   background-size: cover;
 }
 
-/* SHOP ----------- */
-
+/* || SHOP */
 
 .price-card-wrapper {
   display: flex;
   flex-flow: row wrap;
   gap: var(--px32);
-
 }
 
 .price-card {
   flex: 1;
+  display:flex;
+  flex-flow: column wrap;
+  justify-content: center;
   border-radius: var(--border-radius-l);
 }
 
 .item-wrapper {
   background: var(--dark-bg);
   background-size: cover;
-  margin: 40% 0 0;
+  margin: calc(3 * var(--px48)) 0 0;
   padding: var(--px16);
   border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  text-align: center;
+  text-align:center;
+  vertical-align: middle;
+  flex: 1;
 }
 
 .price-card img {
   object-fit: contain;
-  width: 50%;
+  width: calc(var(--px48) * 3.4);
   height: auto;
-  margin: -40% 0 var(--px16);
+  margin: calc(-3 * var(--px48)) 0 var(--px16);
 }
 
 .item-name {
@@ -381,7 +392,7 @@ section {
 }
 
 .item-price::before {
-  content: "$";
+  content: "$"; /* Add dollar sign before price */
   vertical-align: super;
   font-size: var(--fontsize-l-4);
 }
@@ -389,40 +400,55 @@ section {
 .item-effects {
   border-radius: 0 0 var(--border-radius-l) var(--border-radius-l);
   background-color: var(--color-accent-light);
-  padding: var(--px16);
+  padding: var(--px32);
+  text-align: center;
+  vertical-align: middle;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-effects ul {
   list-style-type: none;
   padding:0;
-  margin:0 0 var(--px16);
+  margin: 0 0 var(--px32);
+  width: 100%;
 }
 
 .item-effects li {
   display: block;
   text-align: center;
   margin: 0;
-  padding: var(--px8);
+  padding: var(--px8) 0;
   border-bottom: 1px solid grey;
 }
 
-.item-effects li:nth-child(n+3) {
+.item-effects li:last-child {
   border: none;
+  padding-bottom: var(--px8) !important;
+  margin: 0;
 }
 
-.price-card .button {
+.item-effects .button {
   width: 100%;
+  align-self: flex-start;
+	margin-top: auto;
 }
 
-/* FOOTER ----------- */
+/* || FOOTER */
 
 footer {
   background-color: var(--color-accent-neutral);
+  background: var(--neutral-bg);
+  background-size: cover;
   font-size: var(--fontsize-l-1);
 }
 
 footer ul {
   display: flex;
+  flex-flow: row wrap;
   gap: var(--px32);
   justify-content: flex-end;
   list-style: none;
@@ -439,7 +465,6 @@ footer ul > li:first-child {
   flex: 1;
 }
 
-
 /* Tablet breakpoint 48em/768px */
 @media screen and (max-width:48rem) {
 
@@ -448,13 +473,13 @@ footer ul > li:first-child {
     padding: var(--px48);
   }
 
-  /* Hero Banner */
+  /* || Hero Banner */
   #hero {
     padding-bottom: calc(2.4 * var(--px48));
     margin-bottom: calc(-3.4 * var(--px48));
   }
 
-  /* Shop */
+  /* || Shop */
   .price-card-wrapper {
     gap: var(--px8);
   }
@@ -466,20 +491,17 @@ footer ul > li:first-child {
   }
 
   .item-wrapper {
+    flex: 1;
     border-radius: var(--border-radius-l) 0 0 var(--border-radius-l);
   }
 
   .item-effects {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+    flex: 1;
     border-radius: 0 var(--border-radius-l) var(--border-radius-l) 0;
   }
 
   .item-wrapper, .item-effects  {
-    flex: 1;
-    margin-top: var(--px52);
+    margin-top: var(--px64);
   }
 
   .item-effects .button, ul {
@@ -487,20 +509,22 @@ footer ul > li:first-child {
   }
 
   .price-card img {
-    width: 40%;
-    margin: calc(-1 * var(--px52)) 0 var(--border-radius-l);
+    margin: calc(-1 * var(--px64)) 0 var(--px8);
   }
-
 }
 
 /* Phone breakpoint 36em/576px */
 @media screen and (max-width:36rem) {
 
+  section {
+    scroll-margin-top: var(--px56);
+  }
+
   .wrapper {
     padding: var(--px24);
   }
 
-  /* Hero Banner */
+  /* || Hero Banner */
   #hero {
     padding-bottom: calc(3.5 * var(--px48));
     margin-bottom: calc(-4 * var(--px48));
@@ -514,12 +538,12 @@ footer ul > li:first-child {
     width: 100%;
   }
 
-  /* Subscription Form */
+  /* || Subscription Form  */
   #form > * {
     flex: 100%;
   }
 
-  /* Benefits */
+  /* || Benefits */
   .benefit-card {
     flex-flow: column;
   }
@@ -528,6 +552,7 @@ footer ul > li:first-child {
     flex-direction: column;
   }
 
+  /* Add negative bottom margins to reduce space between image and headline */
   .benefit-card img {
     width: 100%;
     margin-bottom: -10%;
@@ -537,14 +562,7 @@ footer ul > li:first-child {
     margin-bottom: -20% !important;
   }
 
-  /* Shop */
-  .item-wrapper {
-    align-items: center;
-    justify-content: center;
-
-  }
-
-  /* Footer */
+  /* || Footer */
   footer ul > li {
     align-self: flex-start;
   }
@@ -563,9 +581,8 @@ footer ul > li:first-child {
     justify-content: center;
   }
 
-  /* Shop */
+  /* || Shop */
   .item-wrapper, .item-effects  {
-    flex: 1;
     margin-top: 0;
   }
 
@@ -574,17 +591,17 @@ footer ul > li:first-child {
   }
 
   .price-card img {
-    width: 40%;
-    margin: 0 0 var(--border-radius-l);
+    margin: 0 0 var(--px8);
   }
 
-  /* Footer */
-  footer ul > li {
-    align-self: flex-start;
+  /* || Footer */
+  footer ul {
+    justify-content: center;
+    text-align: center;
+    gap: var(--px8) var(--px32);
   }
-
   footer ul > li:first-child {
-    align-self: flex-end;
+    flex: 100%;
   }
 
 }
