@@ -54,7 +54,7 @@
   --fontsize-s-2: calc(var(--fontsize-s-1) / var(--fontscale));
   --fontsize-s-3: calc(var(--fontsize-s-2) / var(--fontscale));
 
-  /* || SPACING (converted to rems/ems) */
+  /* || SPACING (converted to rems) */
   --base-px: 16;
   --max-page-width: calc((1280 / var(--base-px)) * var(--rem) );
   --px4: calc((4 / var(--base-px)) * var(--rem) );
@@ -206,6 +206,7 @@ section {
   background-size: cover;
   padding: var(--px24) var(--px32) calc(2.4 * var(--px48));
   margin-bottom: calc(-2.4 * var(--px48));
+  scroll-margin-top: 6rem;
 }
 
 #hero .wrapper {
