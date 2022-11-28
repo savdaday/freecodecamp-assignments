@@ -34,12 +34,12 @@
         https://aristath.github.io/blog/typography-scales-with-css-vars
         https://aristath.github.io/blog/fluid-typography-css-vars
   */
-  --fontscale: 1.333;
-  --base-fontsize: 1px;
-  --fluid-type-ratio: 0.9;
+  --fontscale: 1.315;
 
-  /* Add clamp font scaling formula so font doesn't get too large or too small */
-  --rem: clamp(0.625rem, calc(var(--base-fontsize) + var(--fluid-type-ratio) * 1vw), 1rem);
+  /* Use FLUID TYPOGRAPHY TOOL to generate simplified font scaling formula.
+     https://fluidtypography.com/#app-get-started
+  */
+  --rem: clamp(0.625rem, 0.625vw + 0.5rem, 1rem);
 
   /* Don't change the lines below, you only need to change the --fontscale above. */
   --fontsize-l-1: calc(var(--rem) * var(--fontscale));
@@ -54,9 +54,9 @@
   --fontsize-s-2: calc(var(--fontsize-s-1) / var(--fontscale));
   --fontsize-s-3: calc(var(--fontsize-s-2) / var(--fontscale));
 
-  /* || SPACING (converted to rems) */
+  /* || SPACING (px to rems) */
   --base-px: 16;
-  --max-page-width: calc((1280 / var(--base-px)) * var(--rem) );
+  --max-page-width: 80rem;
   --px4: calc((4 / var(--base-px)) * var(--rem) );
   --px8: calc((8 / var(--base-px)) * var(--rem) );
   --px12: calc((12 / var(--base-px)) * var(--rem) );
