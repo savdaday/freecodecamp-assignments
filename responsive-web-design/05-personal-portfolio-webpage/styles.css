@@ -1,7 +1,178 @@
 :root {
-  
+
+  /* || THEME */
+  --color-hero: 217, 171, 40;
+  --color-hero-2: 150, 30, 78;
+  --color-antihero: 35, 32, 32;
+  --color-sidekick-3: 54, 53, 55;
+  --color-sidekick-2: 201, 201, 201;
+  --color-sidekick-1: 251, 255, 254;
+  /*
+  --color-sidekick-2: #0d5c63;
+  --color-sidekick-1: #44a1a0;
+*/
+  --max-content-width: 1280px;
+
+  /* || FLUID TYPOGRAPHY */
+  /* Adapted from the formula on FLUID TYPOGRAPHY TOOL. https://fluidtypography.com
+     vw = View Width, fs = Font Size  */
+  --min-vw: 20;
+  --max-vw: 80;
+  --min-fs: 0.75;
+  --max-fs: 1;
+  --diff-vw: calc(var(--max-vw) - var(--min-vw));
+  --diff-fs: calc(var(--max-fs) - var(--min-fs));
+  --fluid-font-size: calc((var(--diff-fs) / var(--diff-vw)) * (100vw - var(--min-vw) * 1rem) + (var(--min-fs) * 1rem));
+
+  /* Scaling Ratio - controls the difference between font sizes */
+  --ratio: 1.333;
+
+  /* Don't change the lines below, you only need to change the --ratio above. */
+  --font-size-0: clamp(var(--min-fs) * 1rem, var(--fluid-font-size), var(--max-fs) * 1rem);
+  /* Large font sizes */
+  --font-size-l-1: calc(var(--font-size-0) * var(--ratio));
+  --font-size-l-2: calc(var(--font-size-l-1) * var(--ratio));
+  --font-size-l-3: calc(var(--font-size-l-2) * var(--ratio));
+  --font-size-l-4: calc(var(--font-size-l-3) * var(--ratio));
+  --font-size-l-5: calc(var(--font-size-l-4) * var(--ratio));
+  /* Small font sizes */
+  --font-size-s-1: calc(var(--font-size-0) / var(--ratio));
+  --font-size-s-2: calc(var(--font-size-s-1) / var(--ratio));
+  --font-size-s-3: calc(var(--font-size-s-2) / var(--ratio));
+  --font-size-s-4: calc(var(--font-size-s-4) / var(--ratio));
+
 }
 
-* {
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font: var(--font-size-0)/1.5 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font: Bold var(--font-size-0)/1 'Inter', sans-serif;
+  margin: 0 0 1rem 0
+}
+
+h1 {
+  font-size: var(--font-size-l-5);
+}
+
+h2 {
+  font-size: var(--font-size-l-4);
+}
+
+h3 {
+  font-size: var(--font-size-l-3);
+}
+
+h4 {
+  font-size: var(--font-size-l-2);
+}
+
+h5 {
+  font-size: var(--font-size-l-1);
+}
+
+p {
+  font-size: var(--font-size-0);
+  margin-bottom: 1rem;
+}
+
+footer * {
+  font-size: var(--font-size-s-1);
+}
+
+#navbar,
+section,
+footer,
+{
+width: 100%;
+padding: 0 2em;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+/* || Navigation & Buttons */
+
+#navbar {
+  background-color: rgb(var(--color-hero));
+  padding: 1em 2em;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+.btn-wrap {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  max-width: var(--max-content-width);
+  list-style: none;
+}
+
+.btn-light,
+.btn-dark {
+  display: block;
+  text-decoration: none;
+  border: 2px solid rgb(var(--color-antihero));
+  border-radius: 0.5em;
+  background-color: none;
+  color: rgb(var(--color-antihero));
+  font-size: var(--font-size-l-1);
+  line-height: 0;
+  padding: 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-light {
+  border-color: rgb(var(--color-sidekick-2));
+  color: rgb(var(--color-sidekick-2));
+}
+
+.btn-light:hover,
+.btn-dark:hover {
+  scale: 1.2;
+  margin: 0 0.75em;
+  transition: scale 300ms cubic-bezier(0.15, 0.000, 0.1, 1.5);
+  box-shadow: 0rem 1rem 2rem -0.75rem rgba(var(--color-antihero), 0.65);
+}
+
+.btn-dark:hover {
+  background-color: rgb(var(--color-hero-2));
+  border-color: rgb(var(--color-hero-2));
+  color: rgb(var(--color-sidekick-1));
+}
+
+.btn-light:hover {
+  background-color: rgb(var(--color-sidekick-2));
+  border-color: rgb(var(--color-sidekick-2));
+  color: rgb(var(--color-antihero));
+}
+
+a i {
+  margin-right: 0.5em;
 }
