@@ -1,0 +1,81 @@
+/*Cash Register
+Design a cash register drawer function checkCashRegister() that accepts purchase price as the first argument (price), payment as the second argument (cash), and cash-in-drawer (cid) as the third argument.
+
+cid is a 2D array listing available currency.
+
+The checkCashRegister() function should always return an object with a status key and a change key.
+
+Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer is less than the change due, or if you cannot return the exact change.
+
+Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for the key change if it is equal to the change due.
+
+Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins and bills, sorted in highest to lowest order, as the value of the change key.
+
+Currency Unit	Amount
+Penny	$0.01 (PENNY)
+Nickel	$0.05 (NICKEL)
+Dime	$0.1 (DIME)
+Quarter	$0.25 (QUARTER)
+Dollar	$1 (ONE)
+Five Dollars	$5 (FIVE)
+Ten Dollars	$10 (TEN)
+Twenty Dollars	$20 (TWENTY)
+One-hundred Dollars	$100 (ONE HUNDRED) */
+
+function checkCashRegister(price, cash, cid) {
+    let cidTotal = cid.reduce((total, amt) => total + amt[1], 0).toFixed(2);
+    let changeDue = cash - price;
+    let changeGiven = [];
+    const denom = [.01, .05, .1, .25, 1, 5, 10, 20, 100];
+
+    // Not enough cash in drawer
+    if (cidTotal < changeDue) {
+        console.log({ status: "INSUFFICIENT_FUNDS", change: [] });
+        return { status: "INSUFFICIENT_FUNDS", change: [] };
+    }
+
+    // Change is equal to cash in drawer
+    if (cidTotal == changeDue || cash == price) {
+        console.log({ status: "CLOSED", change: cid });
+        return { status: "CLOSED", change: cid };
+    }
+
+    for (let i = denom.length; i >= 0; i--) {
+
+        if (denom[i] <= changeDue) {
+            // Store the current denomination and the amount of it used
+            let amt = [cid[i][0], 0];
+            // keep using current denomination until we run out or need a smaller one
+            while (changeDue >= denom[i] && cid[i][1] >= denom[i]) {
+                changeDue = (changeDue - denom[i]).toFixed(2);
+                cid[i][1] -= denom[i];
+                amt[1] += denom[i];
+            }
+            // add it to the final change array before moving to the next denomination
+            changeGiven.push(amt);
+        }
+
+        // Stop loop if we've returned all change due.
+        if (changeDue === 0) {
+            break;
+        }
+    }
+
+    // There's still change due after looping through our entire cash drawer.
+    if (changeDue > 0) {
+        console.log({ status: "INSUFFICIENT_FUNDS", change: [] });
+        return { status: "INSUFFICIENT_FUNDS", change: [] };
+    }
+
+    console.log({ status: "OPEN", change: changeGiven });
+    return { status: "OPEN", change: changeGiven };
+}
+
+// TESTS
+checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+
+checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+
+checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);
+
+checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]);

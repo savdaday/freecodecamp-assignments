@@ -1,0 +1,26 @@
+// Roman Numeral Converter
+const ROMAN_NUMERALS = {
+    0: [, , ,],
+    1: ["I", "X", "C", "M"],
+    2: ["II", "XX", "CC", "MM"],
+    3: ["III", "XXX", "CCC", "MMM"],
+    4: ["IV", "XL", "CD"],
+    5: ["V", "L", "D"],
+    6: ["VI", "LX", "DC"],
+    7: ["VII", "LXX", "DCC"],
+    8: ["VIII", "LXXX", "DCCC"],
+    9: ["IX", "XC", "CM"]
+}
+
+function convertToRoman(num) {
+    const numbers = [...num.toString()].map(e => parseInt(e));
+    const romans = numbers.reverse().map((e, i, a) => ROMAN_NUMERALS[e][i]).reverse().join('');
+    console.log(numbers.join(''), ':', romans);
+
+    return romans;
+}
+
+//Tests
+convertToRoman(2);
+convertToRoman(36);
+convertToRoman(443);
